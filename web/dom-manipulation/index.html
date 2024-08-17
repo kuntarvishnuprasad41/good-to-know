@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        Hello
+    </div>
+    <h1>ToDo List</h1>
+    <div id="list">asdasd</div>
+
+    <input type="text"  placeholder="add your to do here" id="inp"></input>
+    <button onclick="addToDo()">Add todo</button>
+</body>
+<script>
+    function addToDo(){
+        const inputElement = document.getElementById("inp") 
+         
+
+        const list =document.getElementById("list");
+       
+        const textEl = document.createElement("div")
+
+        textEl.innerHTML = inputElement.value
+
+        list.appendChild(textEl)
+
+ 
+        
+    }
+</script>
+</html>
