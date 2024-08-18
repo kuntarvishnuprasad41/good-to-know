@@ -4,4 +4,8 @@
 
 Prints the current working directory.
 
-`pwd`
+`pwd
+
+```html
+<button onclick="copyToClipboard('code')">Copy</button> <code>npm install</code>
+```
