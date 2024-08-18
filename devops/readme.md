@@ -7,5 +7,5 @@ Prints the current working directory.
 `pwd
 
 ```html
-<button onclick="copyToClipboard('code')">Copy</button> <code>npm install</code>
+pwd
 ```
