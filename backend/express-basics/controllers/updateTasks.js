@@ -8,7 +8,7 @@ const updateTasks = (data) => {
 
   const updatedTasks = [...tasksToFilter, data];
 
-  fs.writeFileSync("./db/tasks.json", JSON.stringify(updatedTasks));
+  fs.writeFileSync("./db/tasks.json", JSON.stringify({ tasks: updatedTasks }));
 };
 
 module.exports = updateTasks;
