@@ -6,7 +6,7 @@ const toDoRoute = require("./todo/todo");
 const PORT = 3000;
 
 app.get("/", (req, res) => {
-  res.status(200).send("Hello world");
+  res.status(200).send({ message: "Hello world" });
 });
 
 app.use("/todo", toDoRoute);
