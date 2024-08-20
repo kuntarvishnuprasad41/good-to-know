@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const validateBody = require("./validatiors/validateBody");
+const postOp = require("./controllers/postOp");
 
 const PORT = 3000;
 
@@ -11,9 +12,12 @@ app.get("/", (req, res) => {
   return res.status(200).send({ message: "Hello World" });
 });
 
-app.post("/", validateBody, (req, res) => {
-  return res.status(200).send({ message: "Success", data: req.body });
-});
+// app.post("/", validateBody, (req, res) => {
+//   return res.status(200).send({ message: "Success", data: req.body });
+// });
+
+//this ^ can also be written as
+app.post("/", validateBody, postOp);
 
 app.listen(PORT, (error) => {
   if (!error) {
