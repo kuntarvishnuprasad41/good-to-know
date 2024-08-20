@@ -22,6 +22,11 @@ app.get("/", helloWorld);
 //this ^ can also be written as
 app.post("/", validateBody, postOp);
 
+//Global Catches
+app.use((err, req, res, next) => {
+  res.status(500).send({ message: "something went wrong" });
+});
+
 app.listen(PORT, (error) => {
   if (!error) {
     console.log(`Server is running on port ${PORT}`);
