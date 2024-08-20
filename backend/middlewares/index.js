@@ -2,15 +2,18 @@ const express = require("express");
 const app = express();
 const validateBody = require("./validatiors/validateBody");
 const postOp = require("./controllers/postOp");
+const helloWorld = require("./controllers/helloWorld");
+const authCheck = require("./validatiors/authCheck");
 
 const PORT = 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get("/", (req, res) => {
-  return res.status(200).send({ message: "Hello World" });
-});
+//global middlewares
+app.use(authCheck);
+
+app.get("/", helloWorld);
 
 // app.post("/", validateBody, (req, res) => {
 //   return res.status(200).send({ message: "Success", data: req.body });
