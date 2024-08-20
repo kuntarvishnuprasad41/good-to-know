@@ -58,6 +58,12 @@ git reset <file_name>
 git commit -m "<commit_message>" -a
 ```
 
+#### 3.4 commit changes without add. (Works only for already added files)
+
+```
+git commit -ma "<commit_message>"
+```
+
 #### 3.4 in case you want to commit all changes with a specific author
 
 ```
@@ -96,4 +102,12 @@ git push -u origin <branch_name>
 
 ```
 git push -u origin --all
+```
+
+### 6. clone
+
+Clone a repository
+
+```
+git clone <repository_url>
 ```
