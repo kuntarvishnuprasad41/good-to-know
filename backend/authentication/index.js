@@ -27,8 +27,6 @@ app.get("/", (req, res) => {
     return res.status(401).json({ message: "Unauthorized" });
   }
 
-  // console.log(userExists("1@example.com", "password123"));
-
   res.send({ message: "Hello World!", user: username });
 });
 
