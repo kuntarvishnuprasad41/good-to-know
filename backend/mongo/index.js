@@ -5,6 +5,7 @@ const app = express();
 const mongoose = require("mongoose");
 const addUser = require("./controllers/auth/addUser");
 const login = require("./controllers/auth/login");
+const { verifyToken } = require("./controllers/auth/authUser");
 
 mongoose.connect(
   "mongodb+srv://kuvi:DtvNHNs7bwHXiagR@cluster0.9fyix.mongodb.net/"
@@ -13,7 +14,7 @@ mongoose.connect(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get("/", (req, res) => {
+app.get("/", verifyToken, (req, res) => {
   return res.status(200).send({ message: "Hello World" });
 });
 
