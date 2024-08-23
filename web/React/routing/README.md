@@ -29,7 +29,56 @@ And in Pages we have elemets facilitating redirection to that path such as ancho
 
 But as you can see, it keeps on fetching / hard reload data from server
 
-instead of using anchor tag
+instead of using anchor tag use useNavigate
+
+
+``` jsx
+ const navigate = useNavigate();
+  return (
+    <>
+      <div
+        style={{
+          display: "flex",
+          gap: 20,
+          backgroundColor: "#E5E5f7",
+          paddingLeft: 2,
+          margin: 0,
+          padding: 0,
+          justifyContent: "center",
+        }}
+      >
+        <h4>
+          <button
+            onClick={() => {
+              navigate("/");
+            }}
+            style={{
+              border: "#fff",
+              backgroundColor: "transparent",
+              cursor: "grab",
+            }}
+          >
+            Page1
+          </button>
+        </h4>
+        <h4>
+          <button
+            onClick={() => {
+              navigate("/Page2");
+            }}
+            style={{
+              border: "#fff",
+              backgroundColor: "transparent",
+              cursor: "grab",
+            }}
+          >
+            Page2
+          </button>
+        </h4>
+      </div>
+    </>
+  );
+  ```
 
 
 

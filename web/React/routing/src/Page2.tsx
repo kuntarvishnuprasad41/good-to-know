@@ -1,8 +1,6 @@
 import { memo } from "react";
-import { useNavigate } from "react-router-dom";
 
 const Page2 = memo(() => {
-  const navigate = useNavigate();
   return (
     <div
       style={{
