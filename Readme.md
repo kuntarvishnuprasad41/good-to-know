@@ -1,6 +1,6 @@
 # Learning Repository
 
-This repository is a collection of my learnings across various topics, including backend development, blockchain, DevOps, and data structures & algorithms (DSA). Each section contains relevant code, examples, and documentation.
+This repository is a collection of my learnings across various topics, including backend development, blockchain, DevOps, data structures & algorithms (DSA), Git, and Web development. Each section contains relevant code, examples, and documentation.
 
 ## Table of Contents
 
@@ -16,6 +16,8 @@ This repository is a collection of my learnings across various topics, including
 - [DSA (Data Structures & Algorithms)](#dsa)
   - [Arrays](#arrays)
   - [Basics](#basics)
+- [Git](#git)
+- [Web Development](#web-development)
 
 ## Backend
 
@@ -60,3 +62,13 @@ This repository is a collection of my learnings across various topics, including
 
 - [LearnCpp](dsa/basics/LearnCpp)
 - [Cpp Basics](dsa/basics/cppbasics.md)
+
+## Git
+
+- [Repository Configuration](.git)
+
+## Web Development
+
+- [useMemo](web/React/usememo/)   
+- [useCallback](web/React/useCallBack/)  
+
