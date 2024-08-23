@@ -54,7 +54,7 @@ export const TopBar = () => {
 
 function App() {
   return (
-    <Suspense>
+    <Suspense fallback={<Loading />}>
       <BrowserRouter>
         <TopBar />
         <Routes>
@@ -67,3 +67,7 @@ function App() {
 }
 
 export default App;
+
+const Loading = () => {
+  return <>Loading...</>;
+};
