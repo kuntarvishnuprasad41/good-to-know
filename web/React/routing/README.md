@@ -82,5 +82,15 @@ instead of using anchor tag use useNavigate
 
 
 # Lazy Loading 
+ lazy lets you defer loading component’s code until it is rendered for the first time.
+
+``` js
+const SomeComponent = lazy(load)
+
+```
+
+<Suspense> lets you display a fallback until its children have finished loading.
+
+
 
 ## Good Day
