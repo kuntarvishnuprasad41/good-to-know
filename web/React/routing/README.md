@@ -25,4 +25,13 @@ And in Pages we have elemets facilitating redirection to that path such as ancho
  <a href="/page1">page1</a>
 ```
 
+## Wrong!!!
+
+But as you can see, it keeps on fetching / hard reload data from server
+
+instead of using anchor tag
+
+
+
+
 ## Good Day

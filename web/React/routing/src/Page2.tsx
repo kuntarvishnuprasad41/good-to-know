@@ -1,4 +1,8 @@
-const Page2 = () => {
+import { memo } from "react";
+import { useNavigate } from "react-router-dom";
+
+const Page2 = memo(() => {
+  const navigate = useNavigate();
   return (
     <div
       style={{
@@ -12,11 +16,9 @@ const Page2 = () => {
       }}
     >
       <h1 className="page1">Page2</h1>
-      <h2>
-        <a href="/page1">page1</a>
-      </h2>
+      <h2></h2>
     </div>
   );
-};
+});
 
 export default Page2;
