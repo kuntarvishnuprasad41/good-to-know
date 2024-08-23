@@ -1,6 +1,6 @@
 # useMemo
 
-This ensures that the component doesn't re-render unneccesarily
+This ensures that the particular part of the code or function
 
 ## syn
 

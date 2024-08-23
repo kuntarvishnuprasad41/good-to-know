@@ -1,50 +1,65 @@
-# React + TypeScript + Vite
+# useCallback
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is not about the memoization or minimizing the amount of code that is run.
+This ensures that the child component doesn't re-render unneccesarily if the function doesn't need to change across the renders.
 
-Currently, two official plugins are available:
+## syn
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+const dontRerenderUnlessValueOfXChanges = useCallback(()=>{
+  //some instruction
+}, [x])
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+``` javascript
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+const [a, setA] = useState(0)
+const [b, setB] = useState(0)
+const [c, setC] = useState(0)
+
+
+setA(10)
+setB(10)
+
+
+setTimeout(()=>{
+  setA(10)
+}, 5000)  // will set the value of A with same value after 10 sec
+
+ const calculateSum = () =>{
+  return a+b;
+ }  let us say that we have this function which calculates sum of 2 a+b
+let sum = calculateSum ()
+
+return <><Child calculateSum() /></> 
+
+const Child = ({calculateSum}) =>{ //This section re-renders even if value of state is changed but still value remain unchanged, for eg: a & b was 10, ran setA(10), setB(10) this section re-renders
+  const sum = calculateSum()
+    
+  return <>{sum}</> //This section re-renders even if value of state is changed but still value remain unchanged, for eg: a & b was 10, ran setA(10), setB(10) this section re-renders
+}
+
+
+// To Solve this we can
+
+const calculateSum = useCallBack(()=>{
+  return a+b
+},[a, b])
+
+return <><Child calculateSum() /></> 
+
+const Child = ({calculateSum}) =>{ //This section re-renders even if value of state is changed but still value remain unchanged, for eg: a & b was 10, ran setA(10), setB(10) this section re-renders
+  const sum = calculateSum()
+
+  return <>{sum}</> //This section re-renders even if value of state is changed but still value remain unchanged, for eg: a & b was 10, ran setA(10), setB(10) this section re-renders
+}
+
+
+
+
 ```
+
+
+## Great day
+
