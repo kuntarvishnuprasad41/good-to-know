@@ -73,4 +73,6 @@ This repository is a collection of my learnings across various topics, including
 - [useCallback](web/React/useCallBack/)  
 - [useRef](web/React/useRef/)  
 - [routing](web/React/routing/)  
+- [contextAPI](web/React/contextAPI/)  
+- [recoil1](web/React/recoil/)  
 

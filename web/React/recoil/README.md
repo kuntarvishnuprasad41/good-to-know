@@ -1,3 +1,11 @@
+# Recoil 
+A State management library for React
+
+## Problem with contextAPI
+
+Take a look at the below code 
+
+``` jsx
 import { useContext, useState } from "react";
 import { CountContext } from "./context";
 function App() {
@@ -51,3 +59,30 @@ function Buttons() {
 }
 
 export default App;
+
+```
+
+
+The code 
+
+``` jsx
+
+function Count() {
+  return (
+    <div>
+      <CountRenderer />
+      <Buttons />
+    </div>
+  );
+}
+```
+
+Does not use any of the context values, such as count and setCount
+but still re-renders as it was inside the ContextProvider
+
+
+To Solve this the State management tools like Redux and Recoil are made
+
+
+## Recoil  
+
