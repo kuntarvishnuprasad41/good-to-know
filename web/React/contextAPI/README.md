@@ -10,6 +10,18 @@ import { createContext } from "react";
 export const CountContext = createContext(0);
 ```
 
+or
+
+``` js
+
+export const CountContext = createContext({
+  count: 0,
+  setCount: () => {},
+});
+
+
+```
+
 
 ## - Step 2 : wrap any componant which wants to use the value inside a provider. 
 
@@ -20,6 +32,13 @@ export const CountContext = createContext(0);
 </CountContext.Provider>
 ```
 
+or 
+
+``` jsx
+<CountContext.Provider value={{ count, setCount }}>
+  <Count />
+</CountContext.Provider>
+```
 ## - Step 3 : useContext
 
 ``` jsx
@@ -27,4 +46,9 @@ export const CountContext = createContext(0);
  const count = useContext(CountContext);
 
   return <div>{count}</div>;
+```
+
+
+``` jsx
+  const { count, setCount } = useContext(CountContext);
 ```
