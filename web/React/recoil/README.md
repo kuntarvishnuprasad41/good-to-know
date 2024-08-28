@@ -137,6 +137,64 @@ function Buttons() {
 
 ```
 
+#### Above code can also be written as 
+``` js
+  const setCount = useSetRecoilState(countAtom);
+
+  return (
+    <div>
+      <button
+        onClick={() => {
+          setCount((count) => count + 1);
+        }}
+      >
+        Increase
+      </button>
+
+      <button
+        onClick={() => {
+          setCount((count) => count - 1);
+        }}
+      >
+        Decrease
+      </button>
+    </div>
+  );
+```
+
+
+### selector : Let's add another text where it says whether the count variable even or not
+
+1. Define selector
+``` js 
+import { selector } from "recoil";
+import { countAtom } from "../count";
+
+export const evenOddSelector = selector({
+  key: "evenOddSelector",
+  get: ({ get }) => {
+    const count = get(countAtom);
+    return count % 2 === 0 ? "Even" : "Odd";
+  },
+});
+```
+2. useValue
+``` js
+ const count = useRecoilValue(countAtom);
+  const countType = useRecoilValue(evenOddSelector);
+
+  return (
+    <div>
+      {count}
+
+      <div> It is {countType} </div>
+    </div>
+  );
+}
+
+
+
+```
 
 
 ### Things to implement
