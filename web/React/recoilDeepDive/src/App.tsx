@@ -19,12 +19,10 @@ function App() {
     <>
       <div>
         <button>Home</button>
-
         <button>My Network ({netWorkNotificationCount})</button>
-        <button>Jobs ({jobsCount})</button>
+        <button>Jobs ({jobsCount})</button>646cff
         <button>Messaging ({messagesCount})</button>
         <button>Notifications ({notificationCount})</button>
-
         <button
           onClick={() => {
             setMessagingCount((c) => c + 1);
