@@ -86,3 +86,65 @@ To Solve this the State management tools like Redux and Recoil are made
 
 ## Recoil  
 
+1. Create an Atom
+
+``` js
+
+const { atom } = require("recoil");
+
+const countAtom = atom({
+  key: "countAtom",
+  default: 0,
+});
+
+```
+
+2. Wrap root component with RecoilRoot
+
+``` js
+
+  return (
+    <RecoilRoot>
+      <div>
+        <Count />
+      </div>
+    </RecoilRoot>
+  );
+}
+```
+
+3. Use useRecoilValue for getting value of a state variable and useSetRecoilState where we need set state and useRecoilState where we need both
+``` js
+
+
+function CountRenderer() {
+  const count = useRecoilValue(countAtom);
+
+  return <div>{count}</div>;
+}
+
+function Buttons() {
+  const [count, setCount] = useRecoilState(countAtom);
+
+  return (
+    <div>
+      <button
+        onClick={() => {
+          setCount(count + 1);
+        }}
+      >
+  )}
+
+```
+
+
+
+### Things to implement
+1.  **Atoms**: Recoil uses the concept of atoms to store the state.
+2.  **Selectors**: These are functions that compute derived state based on other state.
+3.  **RecoilRoot**: 
+4.  **useRecoilState**:
+5.  **useSetRecoilState**:
+6.  **useRecoilValue**:
+
+
