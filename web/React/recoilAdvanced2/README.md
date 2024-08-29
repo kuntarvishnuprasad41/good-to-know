@@ -39,6 +39,75 @@ export const todoAtomFamily = atomFamily({
   },
 });
 
+//then use it like
 
+const Todo = ({ id }) => {
+  const currentTodo = useRecoilValue(todoAtomFamily(id));
+  
+
+  return (
+    <>
+      <h3>Todo</h3>
+      {currentTodo?.text} <br />
+      {currentTodo?.completed ? "Completed" : "Not Completed"}
+      <br />
+    </>
+  );
+};
 
   ```
+
+
+
+## Selector Family
+  ### Async calls with selectorfamily
+
+
+``` js
+
+export const getTodoByIdAtom = atomFamily({
+  key: "getTodoByIdAtom",
+  default: selectorFamily({
+    key: "getTodoByIdAtomSel",
+    get:
+      (id) =>
+      async ({ get }) => {
+        const res = await fetch("http://localhost:8000/todo/" + id);
+        const todo = await res.json();
+        return todo;
+      },
+  }),
+});
+
+export const getTodoFromAPIAtom = atom({
+  key: "getTodoFromAPIAtom",
+  default: selector({
+    key: "getTodoFromAPIAtomSel",
+    get: async () => {
+      const todo = await fetch("http://localhost:8000/todos");
+      const res = await todo.json();
+      return res;
+    },
+  }),
+});
+
+
+// usage
+
+const Todo = ({ id }) => {
+  // const currentTodo = useRecoilValue(todoAtomFamily(id));
+
+  const todos = useRecoilValue(getTodoByIdAtom(id));
+
+  return (
+    <>
+      <h3>Todo</h3>
+      {todos?.text} <br />
+      {todos?.completed ? "Completed" : "Not Completed"}
+      {JSON.stringify(todos)}
+      <br />
+    </>
+  );
+};
+
+```
