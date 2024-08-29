@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import "./App.css";
-import { RecoilRoot, useRecoilValue } from "recoil";
+import { RecoilRoot, useRecoilValue, useRecoilValueLoadable } from "recoil";
 import { getTodoByIdAtom } from "./store/atoms";
 
 function App() {
@@ -20,7 +20,11 @@ export default App;
 const Todo = ({ id }) => {
   // const currentTodo = useRecoilValue(todoAtomFamily(id));
 
-  const todos = useRecoilValue(getTodoByIdAtom(id));
+  const todos = useRecoilValueLoadable(getTodoByIdAtom(id));
+
+  if (todos.state == "loading") {
+    return <div>Loading </div>;
+  }
 
   return (
     <>

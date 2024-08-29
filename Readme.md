@@ -76,5 +76,5 @@ This repository is a collection of my learnings across various topics, including
 - [contextAPI](web/React/contextAPI/)  
 - [recoil](web/React/recoil/)  
 - [recoil-basics](web/React/recoilAdvanced/)  
-- [recoil-atomFamily and selectors](web/React/recoilAdvanced2/)  
+- [recoil-atomFamily , Selectors, useRecoilStateLoadable, userecoilValueLoadable](web/React/recoilAdvanced2/)  
 

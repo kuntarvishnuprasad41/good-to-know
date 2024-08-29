@@ -110,4 +110,14 @@ const Todo = ({ id }) => {
   );
 };
 
+
+//to make it use loading to avoid blank 
+ const todos = useRecoilValueLoadable(getTodoByIdAtom(id));
+
+  if (todos.state == "loading") {
+    return <div>Loading </div>;
+  }
+
+
+
 ```
