@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import "./App.css";
 import { RecoilRoot, useRecoilValue } from "recoil";
-import { todoAtomFamily } from "./store/atoms";
+import { getTodoByIdAtom } from "./store/atoms";
 
 function App() {
   return (
@@ -18,13 +18,16 @@ function App() {
 export default App;
 
 const Todo = ({ id }) => {
-  const currentTodo = useRecoilValue(todoAtomFamily(id));
+  // const currentTodo = useRecoilValue(todoAtomFamily(id));
+
+  const todos = useRecoilValue(getTodoByIdAtom(id));
 
   return (
     <>
       <h3>Todo</h3>
-      {currentTodo?.text} <br />
-      {currentTodo?.completed ? "Completed" : "Not Completed"}
+      {todos?.text} <br />
+      {todos?.completed ? "Completed" : "Not Completed"}
+      {JSON.stringify(todos)}
       <br />
     </>
   );
