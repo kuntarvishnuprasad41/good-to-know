@@ -8,7 +8,7 @@ const PORT = 8000;
 app.use(cors());
 
 app.get("/", (req: Request, res: Response) => {
-  res.send("Success"); 
+  res.status(responseCodes.OK).send("Success");
 });
 
 try {
@@ -18,3 +18,5 @@ try {
 } catch (error) {
   console.error("Failed to start server:", error);
 }
+
+

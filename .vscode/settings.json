@@ -1,0 +1,11 @@
+{
+  "emeraldwalk.runonsave": {
+    "commands": [
+      {
+        "match": ".*",
+        "command": "workbench.action.tasks.runTask",
+        "args": "tsc build"
+      }
+    ]
+  }
+}

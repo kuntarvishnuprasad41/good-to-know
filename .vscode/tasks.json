@@ -1,0 +1,23 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "npm",
+      "script": "dev",
+      "path": "backend/postgresPrisma",
+      "problemMatcher": [],
+      "label": "npm: dev - backend/postgresPrisma",
+      "detail": "nodemon -L app/index.js"
+    },
+    {
+      "label": "tsc build",
+      "type": "shell",
+      "command": "tsc -b",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
