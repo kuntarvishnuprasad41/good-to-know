@@ -8,7 +8,7 @@ const PORT = 8000;
 app.use(cors());
 
 app.get("/", (req: Request, res: Response) => {
-  res.send("Success"); //
+  res.send("Success"); 
 });
 
 try {
