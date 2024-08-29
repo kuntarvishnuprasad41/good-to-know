@@ -74,5 +74,7 @@ This repository is a collection of my learnings across various topics, including
 - [useRef](web/React/useRef/)  
 - [routing](web/React/routing/)  
 - [contextAPI](web/React/contextAPI/)  
-- [recoil1](web/React/recoil/)  
+- [recoil](web/React/recoil/)  
+- [recoil-basics](web/React/recoilAdvanced/)  
+- [recoil-atomFamily and selectors](web/React/recoilAdvanced2/)  
 
