@@ -14,3 +14,39 @@ Everyone has these problems
 2. Process of running gets complex (Like steps)
 3. Dependancies grow complex as project grows
 
+## Docker Engine 
+  Allows developers to package applications into containers
+  Container lets you get app src + OS libraries and dependencies required to run the code
+
+## Docker CLI 
+  It is CLI used to do docker operations
+
+## Docker Registery
+  A hub where popular docker images are stored. 
+
+### Docker Image
+  Lightweight standalone executable package 
+
+  ```
+  docker images
+  ```
+
+### Docker Container
+  A running instance of a docker image.
+
+ ```
+  docker ps
+  ```
+
+
+## Port Mapping
+
+```
+docker run -p 8080:80 myimage
+```
+
+8080 -> Port of your system, 80 port of docker container
+
+
+
+- [Common Docker Commands](common%20docker%20commands.md)
