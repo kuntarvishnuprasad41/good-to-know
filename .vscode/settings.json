@@ -7,5 +7,6 @@
         "args": "tsc build"
       }
     ]
-  }
+  },
+  "liveServer.settings.port": 5501
 }
