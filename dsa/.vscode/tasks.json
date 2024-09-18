@@ -4,8 +4,11 @@
     {
       "label": "compile",
       "type": "shell",
-      "command": "g++",
-      "args": ["-std=c++17", "-o", "${fileBasenameNoExtension}", "${file}"],
+      "command": "bash",
+      "args": [
+        "-c",
+        "mkdir -p ${workspaceFolder}/io && g++ -std=c++17 -o ${workspaceFolder}/io/${fileBasenameNoExtension}.out ${file}"
+      ],
       "group": {
         "kind": "build",
         "isDefault": false
@@ -14,7 +17,11 @@
     {
       "label": "compile and run",
       "type": "shell",
-      "command": "g++ -std=c++17 -o ${fileBasenameNoExtension} ${file} && ./${fileBasenameNoExtension} < input.txt > output.txt",
+      "command": "bash",
+      "args": [
+        "-c",
+        "g++ -std=c++17 -o ${workspaceFolder}/io/${fileBasenameNoExtension}.out ${file} && ${workspaceFolder}/io/${fileBasenameNoExtension}.out < ${workspaceFolder}/io/input.txt > ${workspaceFolder}/io/output.txt"
+      ],
       "group": {
         "kind": "build",
         "isDefault": true

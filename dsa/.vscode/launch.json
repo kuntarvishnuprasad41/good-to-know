@@ -1,14 +1,15 @@
 {
     "version": "0.2.0",
     "configurations": [
+
         {
             "name": "WSL Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/arays/${fileBasenameNoExtension}",   
+            "program": "${workspaceFolder}/**/${fileBasenameNoExtension}",   
             "args": [],
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false, 
+            "cwd": "${workspaceFolder}/io",
             "environment": [],
             "externalConsole": true,
             "MIMode": "gdb",
