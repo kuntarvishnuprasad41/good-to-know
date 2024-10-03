@@ -1,29 +1,32 @@
 {
-    "version": "0.2.0",
-    "configurations": [
-
-        {
-            "name": "WSL Launch",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${workspaceFolder}/**/${fileBasenameNoExtension}",   
-            "args": [],
-            "stopAtEntry": false, 
-            "cwd": "${workspaceFolder}/io",
-            "environment": [],
-            "externalConsole": true,
-            "MIMode": "gdb",
-            "miDebuggerPath": "/usr/bin/gdb",
-            "setupCommands": [
-                {
-                    "description": "Enable pretty-printing for gdb",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ],
-            "preLaunchTask": "compile and run",
-            "postDebugTask": "",
-            "internalConsoleOptions": "openOnSessionStart"
-        }
-    ]
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "compile",
+      "type": "shell",
+      "command": "cmd",
+      "args": [
+        "/c",
+        "mkdir \"${workspaceFolder}/io\" && g++ -std=c++17 -o \"${workspaceFolder}/io/${fileBasenameNoExtension}.exe\" \"${file}\""
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    },
+    {
+      "label": "compile and run",
+      "type": "shell",
+      "command": "cmd",
+      "args": [
+        "/c",
+        "g++ -std=c++17 -o \"${workspaceFolder}/io/${fileBasenameNoExtension}.exe\" \"${file}\" && \"${workspaceFolder}/io/${fileBasenameNoExtension}.exe\" < \"${workspaceFolder}/io/input.txt\" > \"${workspaceFolder}/io/output.txt\""
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
 }
+  
