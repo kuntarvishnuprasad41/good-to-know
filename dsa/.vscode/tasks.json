@@ -4,10 +4,10 @@
     {
       "label": "compile",
       "type": "shell",
-      "command": "bash",
+      "command": "zsh",
       "args": [
         "-c",
-        "mkdir -p ${workspaceFolder}/io && g++ -std=c++17 -o ${workspaceFolder}/io/${fileBasenameNoExtension}.out ${file}"
+        "mkdir -p \"${workspaceFolder}/io\" && g++ -std=c++17 -o \"${workspaceFolder}/io/${fileBasenameNoExtension}.out\" \"${file}\""
       ],
       "group": {
         "kind": "build",
@@ -17,10 +17,10 @@
     {
       "label": "compile and run",
       "type": "shell",
-      "command": "bash",
+      "command": "zsh",
       "args": [
         "-c",
-        "g++ -std=c++17 -o ${workspaceFolder}/io/${fileBasenameNoExtension}.out ${file} && ${workspaceFolder}/io/${fileBasenameNoExtension}.out < ${workspaceFolder}/io/input.txt > ${workspaceFolder}/io/output.txt"
+        "g++ -std=c++17 -o \"${workspaceFolder}/io/${fileBasenameNoExtension}.out\" \"${file}\" && \"${workspaceFolder}/io/${fileBasenameNoExtension}.out\" < \"${workspaceFolder}/io/input.txt\" > \"${workspaceFolder}/io/output.txt\""
       ],
       "group": {
         "kind": "build",
