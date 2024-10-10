@@ -18,15 +18,22 @@ signInRouter.post('/', validateSchema(loginValidator), async (req, res) => {
 
         if (user) {
 
+            console.log(user);
 
 
             const isValidPassword = await compareHash(password, user.password);
 
 
+
+
             if (isValidPassword) {
                 const token = generateToken(user);
+
+
+
+
                 return formatOutput(res, 200, "Logged In successfully", {
-                    user, token
+                    user: { firstname: user.firstname, lastname: user.lastname, email: user.email, _id: user._id, role: user.role }, token
                 })
             } return formatOutput(res, 401, "Invalid password")
 

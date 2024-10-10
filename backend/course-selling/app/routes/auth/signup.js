@@ -12,7 +12,7 @@ const signUpRouter = express.Router();
 
 signUpRouter.post('/', validateSchema(userValidator), async (req, res) => {
     const { firstname, lastname, email, password } = req.body
-    console.log({ firstname, lastname, email, password });
+
 
 
     let isUserFound = await isUserExists(email)
@@ -31,9 +31,12 @@ signUpRouter.post('/', validateSchema(userValidator), async (req, res) => {
 
         let result = await user.save();
 
-        const token = generateToken(user);
 
-        return formatOutput(res, 200, "User Registered successfully", { user, token })
+
+
+        const token = generateToken(result);
+
+        return formatOutput(res, 200, "User Registered successfully", { user: { firstname: user.firstname, lastname: user.lastname, email: user.email, _id: user._id, role: user.role }, token })
 
 
     }
