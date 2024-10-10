@@ -17,7 +17,7 @@ const generatehash = (password) => {
 
 const compareHash = (password, hash) => {
     const compare = new Promise((resolve, reject) => {
-        bcrypt.compare(password, 10, function (err, result) {
+        bcrypt.compare(password, hash, function (err, result) {
             if (err) {
                 reject(err);
             } else {
