@@ -1,8 +1,8 @@
 
 const formatOutput = (res, resCode, message, data = [], error = null) => {
     res.status(resCode).json({
-        status: resCode < 400 ? "success" : "error",
-        message,
+
+        message: resCode < 400 ? "success" : "error",
         data,
         error,
         timestamp: new Date().toISOString(),
