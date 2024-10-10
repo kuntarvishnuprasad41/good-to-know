@@ -4,6 +4,7 @@ const v1Router = require('./routes/v1Routes');
 const app = express();
 const mongoose = require('mongoose');
 
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -14,7 +15,9 @@ app.get('/', (req, res) => {
 app.use('/v1', v1Router);
 
 async function main() {
-    mongoose.connect("mongodb://localhost:27017/course-selling").then(() => {
+    const DB_URL = process.env.DB_URL
+
+    mongoose.connect(DB_URL).then(() => {
         console.log("Connected to MongoDB");
         app.listen(8000, (err) => {
             if (!err) {
