@@ -4,7 +4,7 @@ const userValidator = z.object({
     email: z.string().email({ message: "Invalid email address" }),
     password: z.string().min(6, { message: "Password must be at least 6 characters long" }),
     firstname: z.string().min(1, { message: "First name is required" }),
-    lastName: z.string().min(1, { message: "Last name is required" })
+    lastname: z.string().min(1, { message: "Last name is required" })
 });
 
 const loginValidator = z.object({
@@ -28,6 +28,8 @@ const validateSchema = (schema) => (req, res, next) => {
         return res.status(400).json({ errors: err.errors });
     }
 };
+
+
 
 
 module.exports = {

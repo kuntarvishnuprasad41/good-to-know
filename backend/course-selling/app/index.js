@@ -17,6 +17,8 @@ app.use('/v1', v1Router);
 async function main() {
     const DB_URL = process.env.DB_URL
 
+
+
     mongoose.connect(DB_URL).then(() => {
         console.log("Connected to MongoDB");
         app.listen(8000, (err) => {

@@ -2,7 +2,10 @@
 
 @username = "kuntarvishnuprasad41@gmail.com"
 @password = "123Kuntar"
-@fname = "Vishnu Prasad Kuntar"
+@fname = "Vishnu "
+@lname= "Prasad Kuntar"
+
+
 
 
 ### 1. Registration
@@ -11,8 +14,9 @@ POST {{host}}/{{version}}/auth/signup
 Content-Type: application/json
 
 {
-    "fname" : {{fname}}
-    "username": {{username}},
+    "firstname" : {{fname}},
+    "lastname": {{lname}},
+    "email": {{username}},
     "password": {{password}}
 }
 

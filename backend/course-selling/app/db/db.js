@@ -10,7 +10,7 @@ const userSchema = new Schema({
     email: { type: String, unique: true },
     password: String,
     firstname: String,
-    lastName: String,
+    lastname: String,
     role: { type: String, default: "User" }
 });
 
@@ -19,7 +19,7 @@ const adminSchema = new Schema({
     email: { type: String, unique: true },
     password: String,
     firstname: String,
-    lastName: String,
+    lastname: String,
     role: { type: String, default: "Admin" }
 
 });
