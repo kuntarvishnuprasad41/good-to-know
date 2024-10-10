@@ -2,7 +2,7 @@ const express = require('express');
 const { formatOutput } = require('../utils/normalizer');
 const buyCourseRouter = require('./course/buyCourse');
 const getCourseRouter = require('./course/getCourse');
-const signInRouter = require('./auth/SignIn');
+const signInRouter = require('./auth/signin');
 const signUpRouter = require('./auth/signup');
 const v1Router = express.Router();
 

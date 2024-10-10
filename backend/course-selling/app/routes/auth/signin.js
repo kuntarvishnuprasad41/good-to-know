@@ -1,12 +1,16 @@
 const express = require('express');
 const { formatOutput } = require('../../utils/normalizer');
 
+const { userModel } = require('../../db/db')
+
 const signInRouter = express.Router();
 
 signInRouter.post('/', (req, res) => {
-    const reqData = req.body
+    const { firstName, lastname, email, password } = req.body
 
-    console.log(reqData);
+    console.log({ firstName, lastname, email, password });
+
+
 
 
     return formatOutput(res, 200, "Authenticated", reqData);
