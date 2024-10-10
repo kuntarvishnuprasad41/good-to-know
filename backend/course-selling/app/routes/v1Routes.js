@@ -11,8 +11,8 @@ v1Router.get('/', (req, res) => {
     return formatOutput(res, 200, "Hello World")
 })
 
-v1Router.use('/buy', buyCourseRouter)
-v1Router.use('/get', getCourseRouter)
+v1Router.use('/courses/buy', buyCourseRouter)
+v1Router.use('/courses/get', getCourseRouter)
 v1Router.use('/auth/signin', signInRouter)
 v1Router.use('/auth/signup', signUpRouter)
 

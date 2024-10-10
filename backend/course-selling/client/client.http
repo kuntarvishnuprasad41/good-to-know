@@ -7,7 +7,7 @@
 
 ### 1. Registration
 POST {{host}}/{{version}}/auth/signup
-Authorization: Bearer {{token}}
+ 
 Content-Type: application/json
 
 {
@@ -17,9 +17,9 @@ Content-Type: application/json
 }
 
 
-### 2. Singin
+### 2. SignIn
 POST {{host}}/{{version}}/auth/signin
-Authorization: Bearer {{token}}
+ 
 Content-Type: application/json
 
 {
@@ -27,3 +27,16 @@ Content-Type: application/json
     "password": {{password}}
 }
 
+
+### 3. Buy Course
+POST {{host}}/{{version}}/courses/buy
+Content-Type: application/json
+
+{
+    "courseId" : 1,
+    "userId":1
+}
+
+
+### 4.
+GET {{host}}/{{version}}/courses/get
