@@ -18,7 +18,7 @@ signInRouter.post('/', validateSchema(loginValidator), async (req, res) => {
 
         if (user) {
 
-            console.log(user);
+
 
 
             const isValidPassword = await compareHash(password, user.password);
@@ -41,7 +41,7 @@ signInRouter.post('/', validateSchema(loginValidator), async (req, res) => {
 
 
     } catch (error) {
-        console.log(error);
+
 
         return formatOutput(res, 520, "Unknown error occured @- SIN", {}, error)
     }
