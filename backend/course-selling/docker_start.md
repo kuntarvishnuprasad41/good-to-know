@@ -20,3 +20,6 @@ docker run -d -p 27017:27017 -v course_selling:/data/db mongo
 npm run dev
 ``` 
 
+
+The app will run at port ``` 8000 ```
+
