@@ -1,17 +1,12 @@
-const express = require('express');
-const { formatOutput } = require('../../utils/normalizer');
+const express = require("express");
+const { formatOutput } = require("../../utils/normalizer");
 
 const buyCourseRouter = express.Router();
 
-buyCourseRouter.post('/', (req, res) => {
-    const reqData = req.body
-
-    console.log(reqData);
-
+buyCourseRouter.post("/", (req, res) => {
+    const reqData = req.body;
 
     return formatOutput(res, 200, "Success", reqData);
+});
 
-})
-
-
-module.exports = buyCourseRouter
+module.exports = buyCourseRouter;
