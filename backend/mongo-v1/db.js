@@ -8,11 +8,13 @@ const User = new Schema({
     name: String
 })
 
-const Todo = newSchema({
+const Todo = new Schema({
     title: String,
     done: Boolean,
     userId: ObjectId
 })
+
+
 
 
 const UserModel = mongoose.model('users', User);
